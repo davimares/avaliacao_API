@@ -23,8 +23,7 @@ public class Tests_GET {
 	}
 	
 	@Test
-
-	public void test_01() {
+	public void test_2() {
 		Response response = RestAssured.get("https://swapi.dev/api/people/1");
 
 		int code = 200;
@@ -33,5 +32,19 @@ public class Tests_GET {
 		System.out.println("statusCode é " + statusCode);
 
 	}
+	
+	@Test
+	public void test_3() {
+	
+	Response response = RestAssured.get("https://swapi.dev/api/people/1");
 
+	System.out.println("1º " + response.asString());
+	System.out.println("2º " + response.getBody().asString());
+	System.out.println("3º " + response.getStatusCode());
+	System.out.println("4º " + response.getHeader("Content-Type"));
+	System.out.println("5º " + response.getTime());
+	System.out.println("6º " + response.getStatusLine());
+	
+	}
+	
 }
